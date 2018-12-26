@@ -1,8 +1,8 @@
 const SPACE = " ";
 const NEW_LINE = "\n";
 
-const concat = function(flatList, list) {
-  return list.forEach(x => flatList.push(x));
+const concat = function(list1, list2) {
+  return list1.concat(list2);
 };
 
 const repeatChars = function(character, times) {
@@ -10,8 +10,7 @@ const repeatChars = function(character, times) {
 };
 
 const flat = function(list) {
-  let flatList = [];
-  list.map(concat.bind(null, flatList));
+  let flatList = list.reduce(concat, []);
   return flatList;
 };
 
