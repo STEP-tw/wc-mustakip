@@ -26,17 +26,50 @@ describe("getWordsCount", function() {
   let fs = {readFileSync};
 
   it("should return word,line and chars count for the given input file", function() {
-    let args = ["file1"];
+    let args = {
+      file: "file1",
+      options: ["l", "w", "c"]
+    };
     let expectedOutput = "       2       6      29 file1";
     assert.deepEqual(getWordsCount(args, fs), expectedOutput);
   });
 
   it("should return word,line and chars count for the given input file", function() {
-    let args = ["file2"];
+    let args = {
+      file: "file2",
+      options: ["l", "w", "c"]
+    };
     let expectedOutput = "       3       7      31 file2";
     assert.deepEqual(getWordsCount(args, fs), expectedOutput);
   });
+
+  it("should return word count for the given input file for w as input option", function() {
+    let args = {
+      file: "file1",
+      options: ["w"]
+    };
+    let expectedOutput = "       6 file1";
+    assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+  });
+  it("should return line count for the given input file for l as input option", function() {
+    let args = {
+      file: "file1",
+      options: ["l"]
+    };
+    let expectedOutput = "       2 file1";
+    assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+  });
+
+  it("should return character count for the given input file for c as input option", function() {
+    let args = {
+      file: "file1",
+      options: ["c"]
+    };
+    let expectedOutput = "      29 file1";
+    assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+  });
 });
+
 describe("getNumberOfChars", function() {
   it("should return count of chars in the given content", function() {
     assert.deepEqual(getNumberOfChars("simplicity"), 10);

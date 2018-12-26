@@ -19,13 +19,20 @@ const getNumberOfWords = function(content) {
 };
 
 const getWordsCount = function(args, fs) {
-  let file = args[0];
+  let {file, options} = args;
   let {readFileSync} = fs;
   let content = readFileSync(file, "utf8");
-  let linesCount = getNumberOfLines(content);
-  let wordsCount = getNumberOfWords(content);
-  let charsCount = getNumberOfChars(content);
-  let allCounts = [linesCount, wordsCount, charsCount];
+  //options are w,c,l
+  let counts = {
+    l: getNumberOfLines(content),
+    w: getNumberOfWords(content),
+    c: getNumberOfChars(content)
+  };
+
+  let allCounts = options.reduce(function(p, c) {
+    return p.concat(counts[c]);
+  }, []);
+
   let params = allCounts.map(justifyRight.bind(null, 8));
   params.push(SPACE + file);
   return params.join("");
