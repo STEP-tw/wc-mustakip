@@ -4,7 +4,8 @@ Make main function work for it. DONE
 
 make utilLib.js and its test DONE
 extract the functions which are likely to be in utilLib and write tests for utilLib DONE
-modify the programme to work for wc.js -l file. 
+modify the programme to work for wc.js -l file.  DONE
 
 write parse input function for parsing user input and providing 
-the options given by the user.
+the options given by the user. 
+

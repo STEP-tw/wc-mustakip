@@ -6,7 +6,7 @@ const parseInput = function(userInput) {
   if (hasOption(userInput[0])) {
     return {
       options: [userInput[0].slice(1)],
-      file: userInput[1]
+      file: userInput[1]  
     };
   }
   return {

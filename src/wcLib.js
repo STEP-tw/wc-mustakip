@@ -22,7 +22,6 @@ const getWordsCount = function(args, fs) {
   let {file, options} = args;
   let {readFileSync} = fs;
   let content = readFileSync(file, "utf8");
-  //options are w,c,l
   let counts = {
     l: getNumberOfLines(content),
     w: getNumberOfWords(content),
