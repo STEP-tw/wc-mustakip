@@ -6,6 +6,9 @@ const concat = function(list1, list2) {
 };
 
 const repeatChars = function(character, times) {
+  if (times <= 0) {
+    return "";
+  }
   return new Array(Math.floor(times)).fill(character).join("");
 };
 
