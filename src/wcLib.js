@@ -1,19 +1,4 @@
-const SPACE = " ";
-const NEW_LINE = "\n";
-
-const concat = function(flatList, list) {
-  return list.forEach(x => flatList.push(x));
-};
-
-const repeatChars = function(character, times) {
-  return new Array(Math.floor(times)).fill(character).join("");
-};
-
-const flat = function(list) {
-  let flatList = [];
-  list.map(concat.bind(null, flatList));
-  return flatList;
-};
+const {flat, NEW_LINE, SPACE, justifyRight} = require("../src/util.js");
 
 const getNumberOfChars = function(content) {
   let chars = content.split("");
@@ -34,13 +19,6 @@ const getNumberOfWords = function(content) {
   words = flat(words);
   words = words.filter(x => x != "");
   return words.length;
-};
-
-const justifyRight = function(length, number) {
-  let text = number.toString();
-  let trailingSpacesCount = length - text.length;
-  let spaces = repeatChars(SPACE, trailingSpacesCount);
-  return spaces + text;
 };
 
 const getWordsCount = function(args, fs) {
