@@ -6,10 +6,8 @@ const getNumberOfChars = function(content) {
 };
 
 const getNumberOfLines = function(content) {
-  let lines = content.split(NEW_LINE);
-  if (lines[lines.length - 1] == "") {
-    lines.pop();
-  }
+  let chars = content.split("");
+  let lines = chars.filter(x => x == "\n");
   return lines.length;
 };
 
