@@ -87,3 +87,14 @@ describe("add", function() {
     assert.deepEqual(add([], []), []);
   });
 });
+
+describe("addCounts", function() {
+  it("should add two counts and return the total counts", function() {
+    let counts1 = [1, 2, 3];
+    let file = {
+      fileCounts: [4, 5, 6]
+    };
+    expectedOutput = [5, 7, 9];
+    assert.deepEqual(addCounts(counts1, file), expectedOutput);
+  });
+});
