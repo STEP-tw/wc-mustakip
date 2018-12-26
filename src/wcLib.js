@@ -35,5 +35,8 @@ const getWordsCount = function(args, fs) {
 };
 
 module.exports = {
-  getWordsCount
+  getWordsCount,
+  getNumberOfChars,
+  getNumberOfLines,
+  getNumberOfWords
 };

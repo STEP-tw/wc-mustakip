@@ -1,3 +1,7 @@
 Write topLevel tests for the lib.
-Write function to work for default options. 
-Make main function work for it.
+Write function to work for default options for one file. DONE
+Make main function work for it. DONE
+
+make utilLib.js and its test
+extract the functions which are likely to be in utilLib and write tests for utilLib
+modify the programme to work for wc.js -l file. 
