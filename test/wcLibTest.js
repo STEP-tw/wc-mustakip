@@ -41,7 +41,7 @@ describe("getNumberOfChars", function() {
   it("should return count of chars in the given content", function() {
     assert.deepEqual(getNumberOfChars("simplicity"), 10);
   });
-  it("should take '\n'as a single character", function() {
+  it("should take '\\n'as a single character", function() {
     let content = "Nice day\n";
     content += "Very nice day";
     assert.deepEqual(getNumberOfChars(content), 22);
@@ -62,5 +62,17 @@ describe("getNumberOfLines", function() {
   });
   it("should return 0 for no line in input", function() {
     assert.deepEqual(getNumberOfLines(""), 0);
+  });
+});
+
+describe("getNumberOfWords", function() {
+  it("should return number of words in given input file", function() {
+    let content = "This is good\n";
+    content += "This is another good";
+    assert.deepEqual(getNumberOfWords(content), 7);
+  });
+
+  it("should return count 0 for empty file", function() {
+    assert.deepEqual(getNumberOfWords(""), 0);
   });
 });

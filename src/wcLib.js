@@ -1,13 +1,12 @@
 const {flat, NEW_LINE, SPACE, justifyRight} = require("../src/util.js");
 
 const getNumberOfChars = function(content) {
-  let chars = content.split("");
-  return chars.length;
+  return content.length;
 };
 
 const getNumberOfLines = function(content) {
   let chars = content.split("");
-  let lines = chars.filter(x => x == "\n");
+  let lines = chars.filter(x => x == NEW_LINE);
   return lines.length;
 };
 
