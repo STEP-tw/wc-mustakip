@@ -22,7 +22,7 @@ describe("parseInput", function() {
 
   it('["file1"]', function() {
     let userInput = ["file1"];
-    
+
     expectedOutput = {file: ["file1"], options: ["l", "w", "c"]};
     assert.deepEqual(parseInput(userInput), expectedOutput);
   });

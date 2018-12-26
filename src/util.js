@@ -1,4 +1,5 @@
 const SPACE = " ";
+const HYPHEN = "-";
 const NEW_LINE = "\n";
 
 const concat = function(list1, list2) {
@@ -30,5 +31,6 @@ module.exports = {
   flat,
   SPACE,
   NEW_LINE,
+  HYPHEN,
   justifyRight
 };
