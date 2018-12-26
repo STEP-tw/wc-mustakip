@@ -6,10 +6,10 @@ const singleFileFomatter = function(files) {
   return justifiedCounts[0];
 };
 
-add = function(list1, list2) {
+const add = function(list1, list2) {
   let addedList = [];
-  for (i in list2) {
-    addedList[i] = list2[i] + list1[i];
+  for (let index in list2) {
+    addedList[index] = list2[index] + list1[index];
   }
   return addedList;
 };
