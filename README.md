@@ -1,5 +1,6 @@
-/* 
-  Usage:
+### Usage:
+
+  ```
   node ./wc.js file1
   node ./wc.js -l file1
   node ./wc.js -c file1
@@ -28,4 +29,4 @@
   node ./wc.js -w -c -l file1 [file2]...
   node ./wc.js -c -w -l file1 [file2]...
   node ./wc.js -c -l -w file1 [file2]...
-*/
+  ```
