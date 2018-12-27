@@ -16,16 +16,7 @@ const unique = function(elementsTillNow, currentElement) {
 };
 
 const arrangeOptions = function(options) {
-  let arrangedOptions = [];
-  if (options.includes("l")) {
-    arrangedOptions.push("l");
-  }
-  if (options.includes("w")) {
-    arrangedOptions.push("w");
-  }
-  if (options.includes("c")) {
-    arrangedOptions.push("c");
-  }
+  let arrangedOptions = allowedOptions.filter(x => options.includes(x));
   return arrangedOptions;
 };
 
