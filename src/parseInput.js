@@ -1,10 +1,16 @@
 const {flat} = require("./util.js");
 const hasOption = x => x.startsWith("-");
 const isFile = x => !x.startsWith("-");
+const isValidOption = option => allowedOptions.includes(option);
+
 const allowedOptions = ["l", "w", "c"];
 
 const extractEachOption = function(optionGroup) {
   return optionGroup.slice(1).split("");
+};
+
+const getUnique = function(list) {
+  return list.reduce(unique, []);
 };
 
 const unique = function(elementsTillNow, currentElement) {
@@ -20,17 +26,23 @@ const arrangeOptions = function(options) {
   return arrangedOptions;
 };
 
+const getAllUniqueOptions = function(userInput) {
+  let allListedOptions = userInput.filter(hasOption).map(extractEachOption);
+  let allOptions = flat(allListedOptions);
+  return getUnique(allOptions);
+};
+
+const getValidOpts = function(optionList) {
+  let validOptions = optionList.filter(isValidOption);
+  return arrangeOptions(validOptions);
+};
+
 const parseInput = function(userInput) {
   let options;
   let file;
   if (hasOption(userInput[0])) {
-    let possibleOptions = userInput.filter(hasOption);
-    possibleOptions = possibleOptions.map(extractEachOption);
-    possibleOptions = flat(possibleOptions);
-    let options = possibleOptions.reduce(unique, []);
-    options = options.filter(x => allowedOptions.includes(x));
-    options = arrangeOptions(options);
-
+    let allUniqueOptions = getAllUniqueOptions(userInput);
+    let options = getValidOpts(allUniqueOptions);
     file = userInput.filter(isFile);
     return {file, options};
   }
