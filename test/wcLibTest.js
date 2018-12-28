@@ -82,6 +82,31 @@ describe("getWordsCount", function() {
       let expectedOutput = "      29 file1";
       assert.deepEqual(getWordsCount(args, fs), expectedOutput);
     });
+    it("should return word and character count for the given input file for w and c as input option", function() {
+      let args = {
+        file: ["file1"],
+        options: ["w", "c"]
+      };
+      let expectedOutput = "       6      29 file1";
+      assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+    });
+    it("should return line and word count for the given input file for l and w as input option", function() {
+      let args = {
+        file: ["file1"],
+        options: ["l", "w"]
+      };
+      let expectedOutput = "       2       6 file1";
+      assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+    });
+
+    it("should return character and line count for the given input file for c and l as input option", function() {
+      let args = {
+        file: ["file1"],
+        options: ["l", "c"]
+      };
+      let expectedOutput = "       2      29 file1";
+      assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+    });
   });
 
   describe("multipleFiles", function() {
@@ -128,6 +153,39 @@ describe("getWordsCount", function() {
       expectedOutput += "      60 total";
       assert.deepEqual(getWordsCount(args, fs), expectedOutput);
     });
+  });
+  it("should return word and chars count for the multiple files", function() {
+    let args = {
+      file: ["file1", "file2"],
+      options: ["w", "c"]
+    };
+    let expectedOutput = "       6      29 file1\n";
+    expectedOutput += "       7      31 file2\n";
+    expectedOutput += "      13      60 total";
+
+    assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+  });
+  it("should return line and chars count for the multiple files", function() {
+    let args = {
+      file: ["file1", "file2"],
+      options: ["l", "c"]
+    };
+    let expectedOutput = "       2      29 file1\n";
+    expectedOutput += "       3      31 file2\n";
+    expectedOutput += "       5      60 total";
+
+    assert.deepEqual(getWordsCount(args, fs), expectedOutput);
+  });
+  it("should return word and line count for the multiple files", function() {
+    let args = {
+      file: ["file1", "file2"],
+      options: ["l", "w"]
+    };
+    let expectedOutput = "       2       6 file1\n";
+    expectedOutput += "       3       7 file2\n";
+    expectedOutput += "       5      13 total";
+
+    assert.deepEqual(getWordsCount(args, fs), expectedOutput);
   });
 });
 

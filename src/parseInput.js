@@ -42,7 +42,7 @@ const parseInput = function(userInput) {
   let file;
   if (hasOption(userInput[0])) {
     let allUniqueOptions = getAllUniqueOptions(userInput);
-    let options = getValidOpts(allUniqueOptions);
+    options = getValidOpts(allUniqueOptions);
     file = userInput.filter(isFile);
     return {file, options};
   }
