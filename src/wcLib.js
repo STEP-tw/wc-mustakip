@@ -39,12 +39,12 @@ const getCounts = function(options, {fileName, fileContent}) {
 };
 
 const getWordsCount = function(args, fs) {
-  let {file, options} = args;
-  let formatter = getFormatter(file.length);
-  let files = file.map(read.bind(null, fs));
-  files = files.map(getCounts.bind(null, options));
+  let {filePaths, options} = args;
+  let formatter = getFormatter(filePaths.length);
+  let fileContents = filePaths.map(read.bind(null, fs));
+  let countsandFilePaths = fileContents.map(getCounts.bind(null, options));
 
-  return formatter(files);
+  return formatter(countsandFilePaths);
 };
 
 module.exports = {

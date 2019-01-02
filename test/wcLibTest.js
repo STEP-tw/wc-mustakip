@@ -41,7 +41,7 @@ describe("getWordsCount", function() {
   describe("singleFile", function() {
     it("should return word,line and chars count for the given input file", function() {
       let args = {
-        file: ["file1"],
+        filePaths: ["file1"],
         options: ["l", "w", "c"]
       };
       let expectedOutput = "       2       6      29 file1";
@@ -50,7 +50,7 @@ describe("getWordsCount", function() {
 
     it("should return word,line and chars count for the given input file", function() {
       let args = {
-        file: ["file2"],
+        filePaths: ["file2"],
         options: ["l", "w", "c"]
       };
       let expectedOutput = "       3       7      31 file2";
@@ -59,7 +59,7 @@ describe("getWordsCount", function() {
 
     it("should return word count for the given input file for w as input option", function() {
       let args = {
-        file: ["file1"],
+        filePaths: ["file1"],
         options: ["w"]
       };
       let expectedOutput = "       6 file1";
@@ -67,7 +67,7 @@ describe("getWordsCount", function() {
     });
     it("should return line count for the given input file for l as input option", function() {
       let args = {
-        file: ["file1"],
+        filePaths: ["file1"],
         options: ["l"]
       };
       let expectedOutput = "       2 file1";
@@ -76,7 +76,7 @@ describe("getWordsCount", function() {
 
     it("should return character count for the given input file for c as input option", function() {
       let args = {
-        file: ["file1"],
+        filePaths: ["file1"],
         options: ["c"]
       };
       let expectedOutput = "      29 file1";
@@ -84,7 +84,7 @@ describe("getWordsCount", function() {
     });
     it("should return word and character count for the given input file for w and c as input option", function() {
       let args = {
-        file: ["file1"],
+        filePaths: ["file1"],
         options: ["w", "c"]
       };
       let expectedOutput = "       6      29 file1";
@@ -92,7 +92,7 @@ describe("getWordsCount", function() {
     });
     it("should return line and word count for the given input file for l and w as input option", function() {
       let args = {
-        file: ["file1"],
+        filePaths: ["file1"],
         options: ["l", "w"]
       };
       let expectedOutput = "       2       6 file1";
@@ -101,7 +101,7 @@ describe("getWordsCount", function() {
 
     it("should return character and line count for the given input file for c and l as input option", function() {
       let args = {
-        file: ["file1"],
+        filePaths: ["file1"],
         options: ["l", "c"]
       };
       let expectedOutput = "       2      29 file1";
@@ -112,7 +112,7 @@ describe("getWordsCount", function() {
   describe("multipleFiles", function() {
     it("should return word,line and chars count for the multiple files", function() {
       let args = {
-        file: ["file1", "file2"],
+        filePaths: ["file1", "file2"],
         options: ["l", "w", "c"]
       };
       let expectedOutput = "       2       6      29 file1\n";
@@ -124,7 +124,7 @@ describe("getWordsCount", function() {
 
     it("should return word count for multiple files for w as input option", function() {
       let args = {
-        file: ["file1", "file2"],
+        filePaths: ["file1", "file2"],
         options: ["w"]
       };
       let expectedOutput = "       6 file1\n";
@@ -134,7 +134,7 @@ describe("getWordsCount", function() {
     });
     it("should return line count for multiple files for l as input option", function() {
       let args = {
-        file: ["file1", "file2"],
+        filePaths: ["file1", "file2"],
         options: ["l"]
       };
       let expectedOutput = "       2 file1\n";
@@ -145,7 +145,7 @@ describe("getWordsCount", function() {
 
     it("should return character count for multiple files for c as input option", function() {
       let args = {
-        file: ["file1", "file2"],
+        filePaths: ["file1", "file2"],
         options: ["c"]
       };
       let expectedOutput = "      29 file1\n";
@@ -156,7 +156,7 @@ describe("getWordsCount", function() {
   });
   it("should return word and chars count for the multiple files", function() {
     let args = {
-      file: ["file1", "file2"],
+      filePaths: ["file1", "file2"],
       options: ["w", "c"]
     };
     let expectedOutput = "       6      29 file1\n";
@@ -167,7 +167,7 @@ describe("getWordsCount", function() {
   });
   it("should return line and chars count for the multiple files", function() {
     let args = {
-      file: ["file1", "file2"],
+      filePaths: ["file1", "file2"],
       options: ["l", "c"]
     };
     let expectedOutput = "       2      29 file1\n";
@@ -178,7 +178,7 @@ describe("getWordsCount", function() {
   });
   it("should return word and line count for the multiple files", function() {
     let args = {
-      file: ["file1", "file2"],
+      filePaths: ["file1", "file2"],
       options: ["l", "w"]
     };
     let expectedOutput = "       2       6 file1\n";

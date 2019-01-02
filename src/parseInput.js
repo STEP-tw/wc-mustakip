@@ -43,12 +43,12 @@ const parseInput = function(userInput) {
   if (hasOption(userInput[0])) {
     let allUniqueOptions = getAllUniqueOptions(userInput);
     options = getValidOpts(allUniqueOptions);
-    file = userInput.filter(isFile);
-    return {file, options};
+    filePaths = userInput.filter(isFile);
+    return {filePaths, options};
   }
   return {
     options: ["l", "w", "c"],
-    file: userInput
+    filePaths: userInput
   };
 };
 
